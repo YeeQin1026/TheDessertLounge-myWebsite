@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"crossorigin="anonymous"></script>
+        <title>The Dessert Lounge - Order</title>
+        <style>
+            .header {background-color: #ffb1b1;padding: 20px;text-align: center;}
+        </style>
+    </head>
+    <body>
+        <div class="header">
+        <img src="https://content3.jdmagicbox.com/comp/mumbai/p1/022pxx22.xx22.180118200637.f1p1/catalogue/the-desserts-lounge-malad-west-mumbai-fast-food-zh8mittmbt.jpg" alt="Logo The Dessert Lounge.webp" width="200" height="200">
+        <h1>The Dessert Lounge</h1>
+        </div>
+        <div class="navbar">
+            <a class="active" href="index.html">Home</a>
+            <a href="alldishes.html">All Dishes</a>
+            <a href="order.html">Order</a>
+            <a href="contact.html">Contact Us/Q&A</a>
+            <a href="aboutus.html">About Us</a>
+        <style>
+            .navbar {overflow: hidden;background-color: #333;}
+            .navbar a {float: left;display: block;color: white;text-align: center;padding: 14px 20px;text-decoration: none;font-size: 20px;}
+            .navbar a.right {float: right;}
+            .navbar a:hover {background-color: #ddd;color: black;}
+        </style>
+        </div>
+        <style>
+            /* Google Fonts */
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+section{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+:root {
+    --main-color:#fd4646;
+    --text-color:#171427;
+    --bg-color:#fff;
+}
+body{
+    color: var(--text-color);
+}
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+section{
+    padding: 4rem 0 3rem;
+}
+/*Header*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.logo{
+    font: 1.1rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+#cart-icon{
+    font: 1.8rem;
+    cursor: pointer;
+}
+/*Cart*/
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s;
+}
+.cart.active{
+    right: 0;
+}
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.cart-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+.detail-box{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.cart-product-title{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--text-color);
+}
+.total-title{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.total-price{
+    margin-left: 0.5rem;
+}
+.btn-buy{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-buy:hover{
+    background: var(--text-color);
+}
+#close-cart{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.cart-price{
+    font-weight: 500;
+}
+.cart-quantity{
+    border: 1px solid var(--text-color);
+    outline-color: var(--main-color);
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+.cart-remove{
+    font-size: 24px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+.section-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.shop{
+    margin-top: 2rem;
+}
+/*Shop Content*/
+.shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+}
+.product-box{
+    position: relative;
+    background-color:#c3ffb1;
+}
+.product-box:hover{
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    transition: 0.4s;
+}
+.product-img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.product-title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.price{
+    font-weight: 500;
+}
+.add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    cursor: pointer;
+}
+.add-cart:hover{
+    background: hsl(249, 32%, 17%);
+}
+/*Breakpoints / Making Responsive */
+@media (max-width:1080px){
+    .nav{
+        padding: 15px;
+    }
+    section{
+        padding: 3rem 0 2rem;
+    }
+    .container{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .shop{
+        margin-top: 2rem !important;
+    }
+}
+@media (max-width:400px){
+    .nav{
+        padding: 11px;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+    .cart{
+        width: 320px;
+    }
+}
+@media (max-width:360px){
+    .shop{
+        margin-top: 1rem !important;
+    }
+    .cart{
+        width: 280px;
+    }
+}
+        </style>
+        <!--Box Icon-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--Header-->
+        <header>
+            <!--nav-->
+            <div class="nav container">
+                <a href="index.html" class="logo">The Dessert Lounge</a>
+                <!--Cart-->
+                <i class='bx bx-shopping-bag' id="cart-icon"></i>
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <!--Buy Button-->
+                    <br>
+                    <br>
+                    <h5><a href="payondelivery.html">Buy Now (Pay On Delivery)</a></h5>
+                    <h5><a href="payment.html">Buy Now (Online Payment)</a></h5>
+                    <!--Content-->
+                    <div class="cart-content"></div>
+                    <!--Total-->
+                    <div class="total">
+                        <div class="total-title">Total Price</div>
+                        <div class="total-price">RM0.00</div>
+                    </div>
+                    <!--Cart Close-->
+                    <i class='bx bx-x' id="close-cart"></i>
+                </div>
+            </div>
+        </header>
+                
+        <!--Shop-->
+        <section class="shop container">
+            <center>
+            <h1 class="section-title">Order Our Dishes</h1>
+            <p><h4>Select the dishes you want to order and click the button "Add To Cart".</h4></p>
+            <br>
+            <h3>Food - Cake</h3>
+            <br>
+            </center>
+            <!--Content-->
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://preppykitchen.com/wp-content/uploads/2021/07/Blueberry-Cake-recipe-n.jpg" alt="blueberry cake" width="300" height="169" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Blueberry Cake</h2>
+                    <span class="number">Number: K01</span><br>
+                    <span class="price">Price: RM3.20 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://www.rockrecipes.com/wp-content/uploads/2013/03/The-Best-Caramel-Cake-slice-of-cake-on-a-white-plate-with-coffee-in-background.jpg" alt="caramel cake" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Caramel Cake</h2>
+                    <span class="number">Number: K02</span><br>
+                    <span class="price">Price: RM3.80 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://rasamalaysia.com/wp-content/uploads/2013/09/moistchocolatecake_01.jpg" alt="chocolate cake" width="152" height="228" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Chocolate Cake</h2>
+                    <span class="number">Number: K03</span><br>
+                    <span class="price">Price: RM3.30 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://easybakelab.com/wp-content/uploads/2020/10/cake-219595_1920-1024x683.jpg" alt="kek buah gelung" width="300" height="190" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Fruit Roll Cake</h2>
+                    <span class="number">Number: K04</span><br>
+                    <span class="price">Price: RM3.00 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://images.summitmedia-digital.com/yummyph/images/2022/05/02/kumori-mango-tango.png" alt="mango cake" width="300" height="165" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Mango Cake</h2>
+                    <span class="number">Number: K05</span><br>
+                    <span class="price">Price: RM3.20 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://borianafoods.com/wp-content/uploads/2015/11/Resepi-Dessert-Lapis-Cheezy-Oreo.jpg" alt="oreo cheese cake" width="275" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Oreo Cheese Cake</h2>
+                    <span class="number">Number: K06</span><br>
+                    <span class="price">Price: RM3.30 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJsZeV347XuMKfpCnWNTynat8990dy8AEY8m6MocSdysFob8KmsDDZnTCZ8LffrJ1xbac&usqp=CAU" alt="kek oreo aiskrim" width="275" height="275" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Oreo Ice Cream Cake</h2>
+                    <span class="number">Number: K07</span><br>
+                    <span class="price">Price: RM4.00 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://www.kuali.com/wp-content/uploads/2014/07/Peach-Cake.jpg" alt="peach cake" width="300" height="180" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Peach Cake</h2>
+                    <span class="number">Number: K08</span><br>
+                    <span class="price">Price: RM3.50 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://japan.recipetineats.com/wp-content/uploads/2020/08/Strawberry_Shortcake_5140.jpg" alt="strawberry cake" width="275" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Strawberry Cake</h2>
+                    <span class="number">Number: K09</span><br>
+                    <span class="price">Price: RM3.50 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 10-->
+                <div class="product-box">
+                    <img src="https://borianafoods.com/wp-content/uploads/2015/11/Resepi-Dessert-Tiramisu-Cheesecake-300x222.jpg" alt="tiramisu" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Tiramisu</h2>
+                    <span class="number">Number: K10</span><br>
+                    <span class="price">Price: RM4.00 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 11-->
+                <div class="product-box">
+                    <img src="https://i.pinimg.com/originals/51/dd/d6/51ddd631359377455e3c7ef8456b4d65.png" alt="kek cawan" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Cupcake</h2>
+                    <span class="number">Number: K11</span><br>
+                    <span class="price">Price: RM4.50 /two cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 12-->
+                <div class="product-box">
+                    <img src="https://drivemehungry.com/wp-content/uploads/2022/09/fresh-fruit-cake-6.jpg" alt="fruit cake" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Fruit Cake</h2>
+                    <span class="number">Number: K12</span><br>
+                    <span class="price">Price: RM3.50 /slice</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 13-->
+                <div class="product-box">
+                    <img src="https://i.pinimg.com/736x/c4/23/20/c42320cbeb510e6d4940cff972a9adf6.jpg" alt="cream puff" width="250" height="250" class="product-img">
+                    <img src="https://i.pinimg.com/736x/f7/d7/84/f7d7848e8e179cf157cd25aa96388b84.jpg" alt="cream puff" width="250" height="250" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Cream Puff</h2>
+                    <span class="number">Number: K13</span><br>
+                    <span class="price">Price: RM4.50 /two pieces</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <section class="shop container">
+            <center>
+                <h3>Food - Pudding</h3>
+                <br>
+            </center>
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://www.thespruceeats.com/thmb/KMootzM5-mrACxyEYEDaEq7_VHY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/basic-vanilla-pudding-recipe-3059887-hero-01-5c3c0ac746e0fb0001002cf8.jpg" alt="puding vanila" width="300" height="200" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Vanilla Pudding</h2>
+                    <span class="number">Number: P01</span><br>
+                    <span class="price">Price: RM2.00 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://3f4c2184e060ce99111b-f8c0985c8cb63a71df5cb7fd729edcab.ssl.cf2.rackcdn.com/media/15665/layeredchocolatemousse.jpg" alt="puding coklat" width="300" height="200" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Chocolate Pudding</h2>
+                    <span class="number">Number: P02</span><br>
+                    <span class="price">Price: RM2.20 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://i.ytimg.com/vi/1_q8txKyg4E/maxresdefault.jpg" alt="puding karamel" width="300" height="230" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Caramel Pudding</h2>
+                    <span class="number">Number: P03</span><br>
+                    <span class="price">Price: RM2.50 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://i.ytimg.com/vi/_LaCuaCqpPI/maxresdefault.jpg" alt="puding peach" width="320" height="175" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Peach Pudding</h2>
+                    <span class="number">Number: P04</span><br>
+                    <span class="price">Price: RM2.50 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://tasteasianfood.com/wp-content/uploads/2018/11/mango-pudding-3.jpg" alt="puding mango" width="280" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Mango Pudding</h2>
+                    <span class="number">Number: P05</span><br>
+                    <span class="price">Price: RM2.50 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://1.bp.blogspot.com/-kQp2KsUy7hM/XBmpiR2AwUI/AAAAAAAALi0/vY5TcLG7gbIBeCDPvxzKkr2t2-SRMaNRgCEwYBhgL/s1600/IMG_7715_1.jpg" alt="puding buah-buahan" width="320" height="210" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Fruit Pudding</h2>
+                    <span class="number">Number: P06</span><br>
+                    <span class="price">Price: RM3.00 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://cookathomemom.com/wp-content/uploads/2020/09/Blueberry-Chia-Pudding-edited-500x500.jpg" alt="puding blueberry" width="280" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Blueberry Pudding</h2>
+                    <span class="number">Number: P07</span><br>
+                    <span class="price">Price: RM2.80 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://www.chocolatesandchai.com/wp-content/uploads/2022/06/Strawberry-Magnolia-Featured.jpg" alt="puding strawberry" width="280" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Strawberry Pudding</h2>
+                    <span class="number">Number: P08</span><br>
+                    <span class="price">Price: RM2.80 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/19/9/hqWrjoTdRtPbKSb3rwWR_Oreo%20Pudding%202.jpg" alt="puding oreo" width="300" height="260" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Oreo Pudding</h2>
+                    <span class="number">Number: P09</span><br>
+                    <span class="price">Price: RM2.50 /cup</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <section class="shop container">
+            <center>
+                <h3>Food - Biscuit</h3>
+                <br>
+            </center>
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://png.pngtree.com/png-vector/20210915/ourlarge/pngtree-dessert-biscuits-png-image_3930267.jpg" alt="biskut coklat" width="320" height="276" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Chocolate Cookies</h2>
+                    <span class="number">Number: B01</span><br>
+                    <span class="price">Price: RM3.50 /package (eight pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://asianinspirations.com.au/wp-content/uploads/2019/05/R02319_Semolina_Cookies.jpg" alt="biskut suji" width="375" height="250" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Suji Cookies</h2>
+                    <span class="number">Number: B02</span><br>
+                    <span class="price">Price: RM3.50 /package (eight pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://2.bp.blogspot.com/-_UsgcqUwbO4/V2n6CNPUF0I/AAAAAAAAb1Q/HGPNK2IJYqs-FHxR9RModZAsx5i4--4JACLcB/s640/13465960_1647039722288559_6780594787683160079_n.jpg" alt="biskut kismis" width="256" height="171" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Raisin Cookies</h2>
+                    <span class="number">Number: B03</span><br>
+                    <span class="price">Price: RM3.80 /package (four pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://mediavine-res.cloudinary.com/image/upload/s--rU19XOoN--/ar_1:1,c_fill,f_auto,fl_lossy,q_auto/v1584084795/pvxnrzwhnwujkvseguhg.jpg" alt="biskut semperit" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Semprit Cookies</h2>
+                    <span class="number">Number: B04</span><br>
+                    <span class="price">Price: RM3.50 /package (seven pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2022/09/30/1472182929.jpg" alt="mochi coklat" width="350" height="225" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Chocolate Mochi</h2>
+                    <span class="number">Number: B05</span><br>
+                    <span class="price">Price: RM3.00 /package (three pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://cdn.idntimes.com/content-images/post/20220727/japanese-sweets-6041180-1280-81031597ca94f56797d81014e664672b.jpg" alt="mochi coklat strawberry" width="250" height="190" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Chocolate Strawberry Mochi</h2>
+                    <span class="number">Number: B06</span><br>
+                    <span class="price">Price: RM3.80 /package (three pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://eatologi.com/upl/imgs/Mochi%20Stroberi.jpg" alt="mochi matcha strawberry" width="416" height="282" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Matcha Strawberry Mochi</h2>
+                    <span class="number">Number: B07</span><br>
+                    <span class="price">Price: RM3.80 /package (three pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://cdn.popbela.com/content-images/post/20191217/00-mochi-buah-66d406e0b6931a4c4cca766e53e00780_750x500.jpg" alt="mochi buah-buahan" width="375" height="250" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Fruit Mochi</h2>
+                    <span class="number">Number: B08</span><br>
+                    <span class="price">Price: RM3.80 /package (three pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://kirbiecravings.com/wp-content/uploads/2016/09/mochi-ice-cream-034.jpg" alt="mochi aiskrim" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Ice Cream Mochi</h2>
+                    <span class="number">Number: B09</span><br>
+                    <span class="price">Price: RM4.00 /package (three pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 10-->
+                <div class="product-box">
+                    <img src="https://whattocooktoday.com/wp-content/uploads/2016/02/kuih-kapit-21.jpg" alt="kuih kapit" width="240" height="360" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Kuih Kapit</h2>
+                    <span class="number">Number: B10</span><br>
+                    <span class="price">Price: RM3.20 /package (six pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 11-->
+                <div class="product-box">
+                    <img src="https://cdn.shopify.com/s/files/1/0034/5812/articles/Christmastime_square_feature.jpg?v=1668018005" alt="kuki krismas" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Christmas Cookies</h2>
+                    <span class="number">Number: B11</span><br>
+                    <span class="price">Price: RM4.20 /package (four pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 12-->
+                <div class="product-box">
+                    <img src="https://mykmu.net/wp-content/uploads/2022/04/biskut-hamster.jpg" alt="biskut hamster" width="337" height="177" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">"Hamster" Cookies</h2>
+                    <span class="number">Number: B12</span><br>
+                    <span class="price">Price: RM3.80 /package (six pieces)</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <section class="shop container">
+            <center>
+                <h3>Drink - Soup</h3>
+                <br>
+            </center>
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://www.kawalingpinoy.com/wp-content/uploads/2014/05/tapioca-coconut-dessert-soup-1.jpg" alt="tapioca coconut soup" width="300" height="400" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Tapioca Coconut Soup</h2>
+                    <span class="number">Number: S01</span><br>
+                    <span class="price">Price: RM6.80 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://christieathome.com/wp-content/uploads/2018/02/Coconut-Mango-Sago1.jpg" alt="coconut mango sago soup" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Coconut Mango Sago Soup</h2>
+                    <span class="number">Number: S02</span><br>
+                    <span class="price">Price: RM7.00 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://constellationinspiration.com/wp-content/uploads/2021/02/taro-sago-dessertsoup-9-683x1024.jpg" alt="taro coconut sago soup" width="240" height="360" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Taro Coconut Sago Soup</h2>
+                    <span class="number">Number: S03</span><br>
+                    <span class="price">Price: RM7.50 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://thewoksoflife.com/wp-content/uploads/2019/12/snow-fungus-soup-6.jpg" alt="snow fungus doup with pears" width="300" height="423" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Snow Fungus Soup With Pears</h2>
+                    <span class="number">Number: S04</span><br>
+                    <span class="price">Price: RM8.00 /bow</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://i.pinimg.com/originals/78/43/5e/78435e31fad5547547b48340b67be806.jpg" alt="mango sago" width="322" height="240" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Mango Sago</h2>
+                    <span class="number">Number: S05</span><br>
+                    <span class="price">Price: RM6.90 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://1.bp.blogspot.com/-lMNKkuQxmgI/XQZLdUdyyaI/AAAAAAAAE4o/j2p_2R99Vm8XJev14BkGoPOhBQuuNSLkQCLcBGAs/s1600/P6168906_Fotor.jpg" alt="pumpkin sago" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Pumpkin Sago</h2>
+                    <span class="number">Number: S06</span><br>
+                    <span class="price">Price: RM6.90 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://souperdiaries.com/wp-content/uploads/2015/09/Green-Bean-Soup-Dessert.jpg" alt="green bean soup" width="365" height="270" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Green Bean Soup</h2>
+                    <span class="number">Number: S07</span><br>
+                    <span class="price">Price: RM6.50 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://madamngrecipe.com/wp-content/uploads/2021/04/Peach-Gum-Dessert-Sweet-Soup-4.jpg" alt="peach gum sweet soup" width="320" height="180" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Peach Gum Sweet Soup</h2>
+                    <span class="number">Number: S08</span><br>
+                    <span class="price">Price: RM8.00 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://cdn.kuali.com/wp-content/uploads/2006/04/27110109/4368-830x553.jpg" alt="red bean soup" width="415" height="276" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Red Bean Soup</h2>
+                    <span class="number">Number: S09</span><br>
+                    <span class="price">Price: RM6.50 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 10-->
+                <div class="product-box">
+                    <img src="https://www.siftandsimmer.com/wp-content/uploads/2020/09/bubur-cha-cha1-683x1024.jpg" alt="bo bo cha cha" width="227" height="341" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Bo Bo Cha Cha</h2>
+                    <span class="number">Number: S10</span><br>
+                    <span class="price">Price: RM7.50 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 11-->
+                <div class="product-box">
+                    <img src="https://2.bp.blogspot.com/-H73gYCOWxiM/XDTD0qIReJI/AAAAAAAAEYw/CG6igQp02qk4lvm0DK9rpT9JIGAYOutngCLcBGAs/s1600/P1015187_Fotor.jpg" alt="barley and gongko soup" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Barley And Gingko Soup</h2>
+                    <span class="number">Number: S11</span><br>
+                    <span class="price">Price: RM7.20 /bowl</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <section class="shop container">
+            <center>
+                <h3>Drink - Bubble Tea</h3>
+                <br>
+            </center>
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://idata.hiloved.com/imgs/3941dcba43e62fa5-1024x681.jpg" alt="brown sugar bubble milk" width="300" height="230" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Brown Sugar Bubble Milk</h2>
+                    <span class="number">Number: BT01</span><br>
+                    <span class="price">Price: RM7.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://i.pinimg.com/originals/86/34/63/863463edb5f43440591d5f29936a6a34.jpg" alt="bubble milk tea" width="256" height="172" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Bubble Milk Tea</h2>
+                    <span class="number">Number: BT02</span><br>
+                    <span class="price">Price: RM7.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://sugaryums.co.uk/wp-content/uploads/2022/04/Strawberry-Milk-Tea-Recipe-card-SugarYums.jpg" alt="strawberry bubble tea" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Strawberry Bubble Tea</h2>
+                    <span class="number">Number: BT03</span><br>
+                    <span class="price">Price: RM8.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://myfamilydinnerideas.com/wp-content/uploads/2022/08/2G0A3725-500x500.jpg" alt="blueberry bubble tea" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Blueberry Bubble Tea</h2>
+                    <span class="number">Number: BT04</span><br>
+                    <span class="price">Price: RM8.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://cdn.sprinklebakes.com/media/2021/06/Coconut-Butterfly-Pea-Flower-Boba-Tea-1.jpg" alt="coconut butterfly pea flower bubble tea" width="235" height="350" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Coconut Butterfly Pea Flower Bubble Tea</h2>
+                    <span class="number">Number: BT05</span><br>
+                    <span class="price">Price: RM8.30</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://myveganminimalist.com/wp-content/uploads/2022/05/Honeydew-Melon-Milk-Tea-Boba-13.jpg" alt="honeydew bubble milk tea" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Honeydew Bubble Milk Tea</h2>
+                    <span class="number">Number: BT06</span><br>
+                    <span class="price">Price: RM8.10</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://theflavorbells.com/wp-content/uploads/2022/07/watermelon-bubble-tea.jpg" alt="watermelon bubble tea" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Watermelon bubble tea</h2>
+                    <span class="number">Number: BT07</span><br>
+                    <span class="price">Price: RM8.10</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://cdn.foodaciously.com/static/recipes/9d082354-2258-46b7-8e5c-c9bf25dfcc25/lychee-bubble-tea-1ea47f1059d3b7645c0b2027979ccc58-1920-q80.jpg" alt="lychee bubble tea" width="384" height="288" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Lychee Bubble Tea</h2>
+                    <span class="number">Number: BT08</span><br>
+                    <span class="price">Price: RM8.10</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTvHVBGHBVOouHTcnfIE8ZfuY1uCAMe-e5jIbeAs6uZeF3Zrfh7A39UdWfASQcDs-zVo&usqp=CAU" alt="passion fruit bubble tea" width="240" height="315" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Passion Fruit Bubble Tea</h2>
+                    <span class="number">Number: BT09</span><br>
+                    <span class="price">Price: RM8.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <section class="shop container">
+            <center>
+                <h3>Drink - Coffee</h3>
+                <br>
+            </center>
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://live.staticflickr.com/7170/6627526839_96e8463fab_c.jpg" alt="hot mochaccino" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Hot Mochaccino</h2>
+                    <span class="number">Number: C01</span><br>
+                    <span class="price">Price: RM4.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://c.recipeland.com/images/r/13336/60a47834d8d7f6db1042_1024.jpg" alt="iced mochaccino" width="256" height="172" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Mochaccino</h2>
+                    <span class="number">Number: C02</span><br>
+                    <span class="price">Price: RM5.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://st2.depositphotos.com/5355656/7824/i/950/depositphotos_78249960-stock-photo-hot-cafe-latte-and-coffee.jpg" alt="hot latte" width="341" height="228" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Hot Latte</h2>
+                    <span class="number">Number: C03</span><br>
+                    <span class="price">Price: RM4.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://www.acouplecooks.com/wp-content/uploads/2021/08/Iced-Latte-003.jpg" alt="iced latte" width="320" height="400" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Latte</h2>
+                    <span class="number">Number: C04</span><br>
+                    <span class="price">Price: RM5.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://www.eatingbirdfood.com/wp-content/uploads/2021/11/healthy-hot-cocoa-hero.jpg" alt="hot chocolate" width="300" height="450" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Hot Chocolate</h2>
+                    <span class="number">Number: C05</span><br>
+                    <span class="price">Price: RM4.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://www.gfbfood.com.my/wp-content/uploads/2020/03/Untitled-design-1.jpg" alt="Iced Chocolate" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Chocolate</h2>
+                    <span class="number">Number: C06</span><br>
+                    <span class="price">Price: RM5.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://static.vecteezy.com/system/resources/previews/001/979/032/large_2x/hot-cappuccino-coffee-with-leave-shaped-art-on-a-wooden-table-free-photo.JPG" alt="hot cappuccino" width="267" height="270" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Hot Cappuccino</h2>
+                    <span class="number">Number: C07</span><br>
+                    <span class="price">Price: RM4.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-p/1a/61/91/e1/iced-cappuccino-with.jpg" alt="iced cappuccino" width="267" height="367" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Cappuccino</h2>
+                    <span class="number">Number: C08</span><br>
+                    <span class="price">Price: RM5.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://cdn.shopify.com/s/files/1/0560/0509/9686/products/Untitleddesign_81_530x@2x.png?v=1619240733" alt="hot americano" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Hot Americano</h2>
+                    <span class="number">Number: C09</span><br>
+                    <span class="price">Price: RM4.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 10-->
+                <div class="product-box">
+                    <img src="https://mocktail.net/wp-content/uploads/2022/03/homemade-Iced-Americano-recipe_1ig.jpg" alt="iced americano" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Americano</h2>
+                    <span class="number">Number: C10</span><br>
+                    <span class="price">Price: RM5.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 11-->
+                <div class="product-box">
+                    <img src="https://d1sag4ddilekf6.azureedge.net/compressed_webp/items/MYITE20220209032937100852/detail/menueditor_item_4e1ad2e657444233b3582d4747ef36ea_1644978928345020069.webp" alt="hot espresso" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Hot Espresso</h2>
+                    <span class="number">Number: C11</span><br>
+                    <span class="price">Price: RM4.50</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 12-->
+                <div class="product-box">
+                    <img src="https://www.thecookierookie.com/wp-content/uploads/2021/05/iced-espresso-recipe-3-800x1200.jpg" alt="iced espresso" width="267" height="400" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Espresso</h2>
+                    <span class="number">Number: C12</span><br>
+                    <span class="price">Price: RM5.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <section class="shop container">
+            <center>
+                <h3>Drink - Soft Drink</h3>
+                <br>
+            </center>
+            <div class="shop-content">
+                <!--Box 1-->
+                <div class="product-box">
+                    <img src="https://www.thespruceeats.com/thmb/iHmC1x1UNWoq4GP4i_81-xajw5g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/popular-screwdriver-variations-759820-hero-01-6f67f02622a54bbb8aeabd7eb65bb3a0.jpg" alt="orange juice" width="375" height="250" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Orange Juice</h2>
+                    <span class="number">Number: SD01</span><br>
+                    <span class="price">Price: RM6.80</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 2-->
+                <div class="product-box">
+                    <img src="https://www.masalaherb.com/wp-content/uploads/2019/05/Passion-Fruit-Juice-gog-2.jpg" alt="passion fruit juice" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Passion Fruit Juice</h2>
+                    <span class="number">Number: SD02</span><br>
+                    <span class="price">Price: RM7.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 3-->
+                <div class="product-box">
+                    <img src="https://deliciouslysprinkled.com/wp-content/uploads/2015/04/Fresh-Strawberry-Lemonade-13.jpg" alt="fresh strawberry lemonade" width="200" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Fresh Strawberry Lemonade</h2>
+                    <span class="number">Number: SD03</span><br>
+                    <span class="price">Price: RM7.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 4-->
+                <div class="product-box">
+                    <img src="https://i.pinimg.com/originals/de/f2/3b/def23b943cd5b697d1b22dc2a6658524.jpg" alt="watermelon juice" width="240" height="230" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Watermelon Juice</h2>
+                    <span class="number">Number: SD04</span><br>
+                    <span class="price">Price: RM6.80</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 5-->
+                <div class="product-box">
+                    <img src="https://st.depositphotos.com/1747733/4117/i/450/depositphotos_41172959-stock-photo-dragon-fruit-smoothie.jpg" alt="dragon fruit juice" width="300" height="200" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Dragon Fruit Juice</h2>
+                    <span class="number">Number: SD05</span><br>
+                    <span class="price">Price: RM6.80</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 6-->
+                <div class="product-box">
+                    <img src="https://polarmart.com.sg/wp-content/uploads/2018/01/100-plus-bottled.jpg" alt="100 plus" width="300" height="350" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">100 Plus</h2>
+                    <span class="number">Number: SD06</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 7-->
+                <div class="product-box">
+                    <img src="https://www.minimeinsights.com/wp-content/uploads/2021/05/Coke-Zero-Sugar-new-640x420.jpg" alt="coca cola" width="320" height="210" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Coca Cola</h2>
+                    <span class="number">Number: SD07</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 8-->
+                <div class="product-box">
+                    <img src="https://www.degrocery.com/de-grocery/2019/09/1.FN-SMASHING-STRAWBERRY-325ML.jpg" alt="strawberry fanta" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Strawberry Fanta</h2>
+                    <span class="number">Number: SD08</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 9-->
+                <div class="product-box">
+                    <img src="https://assets.askhargapedia.com/products/01CXDKAD4S4MJRD5873EENG9M7/1024/fandn-grape-325ml.jpg?c=2021-12-06T02:15:03.276Z" alt="grape fanta" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Grape Fanta</h2>
+                    <span class="number">Number: SD09</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 10-->
+                <div class="product-box">
+                    <img src="https://cdn.shopify.com/s/files/1/0006/1000/9140/products/nL5OtLW3RsCf4DlP4ZYs_ice_cream_soda_350ml_400x.jpg?v=1648106121" alt="ice cream soda fanta" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Ice Cream Soda Fanta</h2>
+                    <span class="number">Number: SD10</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 11-->
+                <div class="product-box">
+                    <img src="https://cf.shopee.com.my/file/1a18d578445ad9ff2fffe19e4f00c5e0" alt="fruit soda fanta" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Fruit Soda Fanta</h2>
+                    <span class="number">Number: SD11</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 12-->
+                <div class="product-box">
+                    <img src="https://www.degrocery.com/de-grocery/2019/09/1.FN-OUTRAGEOUS-ORANGE-325ML.jpg" alt="orange fanta" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Orange Fanta</h2>
+                    <span class="number">Number: SD12</span><br>
+                    <span class="price">Price: RM5.20</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+                <!--Box 13-->
+                <div class="product-box">
+                    <img src="https://www.veganbell.com/wp-content/uploads/2020/08/Iced-Lemon-Tea-3.jpg" alt="orange fanta" width="300" height="300" class="product-img">
+                    <center>
+                    <h2>-</h2>
+                    <h2 class="product-title">Iced Lemon Tea</h2>
+                    <span class="number">Number: SD13</span><br>
+                    <span class="price">Price: RM6.00</span>
+                    <h2>-</h2>
+                    </center>
+                    <i class="bx bx-shopping-bag add-cart"></i>
+                </div>
+            </div>
+        </section>
+        <script>
+            // Cart;
+let cartIcon = document.querySelector("#cart-icon");
+let cart = document.querySelector(".cart");
+let closeCart = document.querySelector("#close-cart");
+// Open Cart
+cartIcon.onclick = () =>{
+    cart.classList.add("active");
+};
+//Close Cart
+closeCart.onclick = () =>{
+    cart.classList.remove("active");
+};
+
+// Cart Working JS
+if (document.readyState == "loading"){
+    document.addEventListener("DOMContentLoaded", ready);
+}else{
+    ready();
+}
+
+// Making Function
+function ready(){
+    //Remove Items From Cart
+    var removeCartButtons = document.getElementsByClassName("cart-remove")
+    console.log(removeCartButtons)
+    for (var i = 0; i < removeCartButtons.length; i++){
+        var button = removeCartButtons[i];
+        button.addEventListener("click", removeCartItem);
+    }
+    // Quantity Changes
+    var quantityInputs = document.getElementsByClassName("cart-quantity");
+    for (var i = 0; i < quantityInputs.length; i++){
+        var input = quantityInputs[i];
+        input.addEventListener("change", quantityChanged);
+    }
+    // Add To Cart
+    var addCart = document.getElementsByClassName("add-cart");
+    for (var i = 0; i < addCart.length; i++){
+        var button = addCart[i];
+        button.addEventListener("click", addCartClicked);
+    }
+    // Buy Button Work
+    document
+        .getElementsByClassName("btn-buy")[0]
+        .addEventListener("click", buyButtonClicked);
+}
+// Buy Button
+function buyButtonClicked(){
+    alert("Your Order is placed")
+    var cartContent = document.getElementsByClassName("cart-content")[0]
+    while (cartContent.hasChildNodes()){
+        cartContent.removeChild(cartContent.firstChild);
+    }
+    updatetotal();
+}
+
+//Remove Items From Cart
+function removeCartItem(event){
+    var buttonClicked = event.target;
+    buttonClicked.parentElement.remove();
+    updatetotal();
+}
+// Quantity Changes
+function quantityChanged(event){
+    var input = event.target;
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updatetotal();
+}
+// Add To Cart
+function addCartClicked(event){
+    var button = event.target;
+    var shopProducts = button.parentElement;
+    var title = shopProducts.getElementsByClassName("product-title")[0].innerText;
+    var price = shopProducts.getElementsByClassName("price")[0].innerText;
+    var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
+    addProductToCart(title, price, productImg);
+    updatetotal();
+}
+function addProductToCart(title, price, productImg){
+    var cartShopBox = document.createElement("div");
+    cartShopBox.classList.add("cart-box");
+    var cartItems = document.getElementsByClassName("cart-content")[0];
+    var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
+    for (var i = 0; i < cartItemsNames.length; i++){
+        if (cartItemsNames[i].innerText == title){
+            alert("You have already add this item to cart");
+            return;
+        }
+    }
+var cartBoxContent = `
+<img src="${productImg}" alt="" class="cart-img">
+<div class="detail-box">
+<div class="cart-product-title">${title}</div>
+<div class="cart-price">${price}</div>
+<input type="number" value="1" class="cart-quantity">
+</div>
+<!--Remove Cart-->
+<i class='bx bxs-trash-alt cart-remove' ></i>`;
+cartShopBox.innerHTML = cartBoxContent;
+cartItems.append(cartShopBox)
+cartShopBox
+    .getElementsByClassName("cart-remove")[0]
+    .addEventListener("click", removeCartItem);
+cartShopBox
+    .getElementsByClassName("cart-quantity")[0]
+    .addEventListener("change", quantityChanged);
+}
+// Update Total
+function updatetotal(){
+    var cartContent = document.getElementsByClassName("cart-content")[0];
+    var cartBoxes = cartContent.getElementsByClassName("cart-box");
+    var total = 0;
+    for (var i = 0; i < cartBoxes.length; i++){
+        var cartBox = cartBoxes[i];
+        var priceElement = cartBox.getElementsByClassName("cart-price")[0];
+        var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
+        var price = parseFloat(priceElement.innerText.replace("RM", ""));
+        var quantity = quantityElement.value;
+        total = total + (price * quantity);
+        document.getElementsByClassName("total-price")[0].innerText = "RM" + total;
+    }
+}
+        </script>
+    </body>
+</html>
